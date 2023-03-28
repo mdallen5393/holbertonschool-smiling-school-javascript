@@ -1,0 +1,77 @@
+@import url("style.css");
+
+.bg-dark {
+	background-color: #071629 !important;
+}
+
+.nav-link {
+	color: white;
+}
+
+.purple-bg {
+	background-color: #C271FF;
+}
+
+.purple {
+	color: #C271FF;
+}
+
+.btn {
+	background-color: #C271FF;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important;
+	border-color: #C271FF;
+}
+
+.circle {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: white;
+}
+
+.fb-icon:before {
+	font-family: 'holberton_school-icon';
+	content: "\e908";
+	color: var(--color-white);
+}
+
+.twitter-icon:before {
+	font-family: 'holberton_school-icon';
+	content: "\e90f";
+	color: var(--color-white);
+}
+
+.insta-icon:before {
+	font-family: 'holberton_school-icon';
+	content: "\e90a";
+	color: var(--color-white);
+}
+
+.display-4 {
+	color: white;
+}
+
+.leftArrow:before {
+	content: "\e903";
+	font-size: 8rem;
+}
+
+.rightArrow:before {
+	content: "\e902";
+	font-size: 8rem;
+}
+
+.leftArrowVideo:before {
+	content: '\e903';
+	font-size: 8rem;
+	color: black;
+}
+
+.rightArrowVideo:before {
+	content: '\e902';
+	font-size: 8rem;
+	color: black;
+}
