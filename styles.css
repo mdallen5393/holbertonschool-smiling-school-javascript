@@ -70,8 +70,43 @@
 	color: black;
 }
 
-.rightArrowVideo:before {
-	content: '\e902';
+.rightArrowVideo {
+	background-image: url('images/arrow_black_right.png');
 	font-size: 8rem;
 	color: black;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    display: inline-block;
+    width: 29px;
+    height: 62px;
+    background: no-repeat 50%/100% 100%
+}
+.carousel-control-prev-icon.white {
+    background-image: url("./images/arrow_white_left.png");
+}
+.carousel-control-next-icon.white {
+    background-image: url("./images/arrow_white_right.png");
+}
+.carousel-control-prev-icon.black {
+    background-image: url("./images/arrow_black_left.png");
+}
+.carousel-control-next-icon.black {
+    background-image: url("/images/arrow_black_right.png");
+}
+
+.loader {
+    border: 10px solid #f3f3f3;
+    border-top: 10px solid #C271FF;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 5s cubic-bezier(0.075, 0.82, 0.165, 5) infinite;
+    margin: auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
