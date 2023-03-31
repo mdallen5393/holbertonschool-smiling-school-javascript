@@ -1,6 +1,11 @@
 $(document).ready(function() {
+	generate_quotes();
+	generate_tutorials();
+});
 
-	// QUOTES CAROUSEL
+
+// QUOTES/TESTIMONIALS CAROUSEL
+function generate_quotes() {
 	$.ajax({
 		url: 'https://smileschool-api.hbtn.info/quotes',
 		method: 'GET',
@@ -47,29 +52,50 @@ $(document).ready(function() {
 			console.log('Error fetching quotes');
 		}
 	});
+}
 
-	// TESTIMONIALS CAROUSEL
+// POPULAR TUTORIALS CAROUSEL
+function generate_tutorials() {
 	$.ajax({
 		url: 'https://smileschool-api.hbtn.info/popular-tutorials',
 		type: 'GET',
 		success: function(data) {
 			let cards = '';
 			data.forEach((item, index) => {
-				cards += `
+				$('#popular-card').append(`
 					<div class="h-100 col-12 col-sm-6 col-md-4">
-						<div class="card">
+						<div class="card border-0 d-flex flex-column">
 							<img src="${item.thumb_url}" class="card-img-top" alt="${item.title}">
 							<div class="card-body">
 								<h5 class="card-title">${item.title}</h5>
 								<h6>${item['sub-title']}</h6>
-								<p>By ${item.author}</p>
-								<p>${item.duration}</p>
+								<div class='card-footer mt-auto'>
+									<div class="row">
+										<img src="${item.author_pic_url}" alt="tiny profile" style="height: 20px;" class="mx-3 rounded-circle">
+										<h6 class="purple">${item.author}</h6>
+									</div>
+									<div class="row mx-0">
+									${(function fun() {
+										let stars = '';
+										for (let i = 1; i <= 5; i++)
+										{
+											if (i < item.star) {
+												stars += `<img src="./images/star_on.png" height="15px" width="15px">`
+											} else {
+												stars += `<img src="./images/star_off.png" height="15px" width="15px">`
+											}
+										}
+										return stars;
+									})
+									()}
+									<p class='ml-auto purple'>${item.duration}</p>
+								</div>
 							</div>
 						</div>
-					</div>`;
+					</div>
+					`);
 			});
-			$('#card-container').append(cards);
-			$('.carousel').slick({
+			$('#popular-card').slick({
 				slidesToShow: 4,
 				slidesToScroll: 1,
 				responsive: [
@@ -89,26 +115,28 @@ $(document).ready(function() {
 			});
 			// set the initial height of the cards after they have been added to the page
 			setCardHeight();
+
+			// remove loader and show carousel
+			$('#popular-loader').remove();
+			$('.testimonialCarousel').removeClass('d-none');
 		}
 	});
 
 
 		// update the height of the cards when the window is resized
 		$(window).resize(setCardHeight);
+};
 
-});
+// function to set the height of all cards to match the height of the tallest card
+function setCardHeight() {
+	// reset the height of all cards to their initial value
+	$('.card').height('auto');
 
-
-	// function to set the height of all cards to match the height of the tallest card
-	function setCardHeight() {
-		// reset the height of all cards to their initial value
-		$('.card').height('auto');
-
-		let maxHeight = 0;
-		$('.card').each(function() {
-			if ($(this).height() > maxHeight) {
-				maxHeight = $(this).height();
-			}
-		});
-		$('.card').height(maxHeight);
-	}
+	let maxHeight = 0;
+	$('.card').each(function() {
+		if ($(this).height() > maxHeight) {
+			maxHeight = $(this).height();
+		}
+	});
+	$('.card').height(maxHeight);
+}

@@ -83,18 +83,13 @@
     height: 62px;
     background: no-repeat 50%/100% 100%
 }
-.carousel-control-prev-icon.white {
+.carousel-control-prev-icon {
     background-image: url("./images/arrow_white_left.png");
 }
-.carousel-control-next-icon.white {
+.carousel-control-next-icon {
     background-image: url("./images/arrow_white_right.png");
 }
-.carousel-control-prev-icon.black {
-    background-image: url("./images/arrow_black_left.png");
-}
-.carousel-control-next-icon.black {
-    background-image: url("/images/arrow_black_right.png");
-}
+
 
 .loader {
     border: 10px solid #f3f3f3;
@@ -109,4 +104,51 @@
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+
+/* slick stuff */
+
+.slick-prev,
+.slick-next {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  color: #333;
+  transform: translateY(-69%); /* nice */
+}
+
+.slick-prev {
+  background: url('./images/arrow_black_left.png') no-repeat;
+  background-position: center;
+  background-size: cover;
+  border: none;
+}
+
+.slick-next {
+  background: url('./images/arrow_black_right.png') no-repeat;
+  background-position: center;
+  background-size: cover;
+  border: none;
+}
+
+/* .slick-prev:before,
+.slick-next:before {
+  
+} */
+
+.slick-prev {
+  left: 0;
+  font-size: 0;
+  width: 29px;
+  height: 62px;
+  background-color:rgba(0, 0, 0, 0.0);
+}
+
+.slick-next {
+  right: 0;
+  font-size: 0;
+  width: 29px;
+  height: 62px;
+  background-color:rgba(0, 0, 0, 0.0);
 }
