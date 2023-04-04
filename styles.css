@@ -132,11 +132,6 @@
   border: none;
 }
 
-/* .slick-prev:before,
-.slick-next:before {
-  
-} */
-
 .slick-prev {
   left: 0;
   font-size: 0;
@@ -151,4 +146,24 @@
   width: 29px;
   height: 62px;
   background-color:rgba(0, 0, 0, 0.0);
+}
+
+
+/* Get playbutton to work */
+.card-img-top {
+  position: relative;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 25%;
+  height: auto;
+}
+
+.card-img-top img {
+  max-width: 100%;
+  height: auto;
 }
