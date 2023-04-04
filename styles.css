@@ -167,3 +167,13 @@
   max-width: 100%;
   height: auto;
 }
+
+.holberton_school-icon-check {
+  font-size: 36px;
+  padding: 1.75rem;
+}
+
+.signal {
+  width: 192px;
+  height: 88px;
+}

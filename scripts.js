@@ -1,7 +1,19 @@
+const homepage = '/holbertonschool-smiling-school-javascript/homepage.html';
+const pricing = '/holbertonschool-smiling-school-javascript/pricing.html';
+const courses = '/holbertonschool-smiling-school-javascript/courses.html';
+
 $(document).ready(function() {
-	generate_quotes();
-	generate_popular();
-	generate_latest();
+  if (window.location.pathname === homepage) {
+    generate_quotes();
+    generate_popular();
+    generate_latest();
+  }
+  if (window.location.pathname === pricing) {
+    generate_quotes();
+  }
+  if (window.location.pathname === courses) {
+    
+  }
 });
 
 
